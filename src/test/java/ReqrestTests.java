@@ -21,7 +21,7 @@ public class ReqrestTests {
                 .body("data.first_name", is("Janet"))
                 .body("data.last_name", is("Weaver"));
     }
-
+    @Test
     void singleUserNotFound() {
         given()
                 .log().uri()
@@ -31,7 +31,7 @@ public class ReqrestTests {
                 .log().status()
                 .statusCode(404);
     }
-
+    @Test
     void singleResource() {
         given()
                 .log().uri()
@@ -47,7 +47,7 @@ public class ReqrestTests {
                 .body("data.color", is("#C74375"))
                 .body("pantone_value", is("17-2031"));
     }
-
+    @Test
     void singleResourseNotFound() {
         given()
                 .log().uri()
@@ -57,7 +57,7 @@ public class ReqrestTests {
                 .log().status()
                 .statusCode(404);
     }
-
+    @Test
     void listResourse() {
         given()
                 .log().uri()
