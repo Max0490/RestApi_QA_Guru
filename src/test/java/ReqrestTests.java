@@ -58,20 +58,16 @@ public class ReqrestTests {
                 .statusCode(404);
     }
     @Test
-    void listResourse() {
+    void idUserTest() {
         given()
                 .log().uri()
                 .when()
-                .get("https://reqres.in/api/unknown")
+                .get("https://reqres.in/api/users?page=2")
                 .then()
                 .log().status()
                 .log().body()
                 .statusCode(200)
-                .body("data.id", is(1))
-                .body("data.name", is("cerulean"))
-                .body("data.year", is("2000"))
-                .body("data.color", is("#98B2D1"))
-                .body("pantone_value", is("15-4020"));
+                .body("data.id", hasItems(7, 8, 9, 10, 11, 12));
     }
 
 }
