@@ -43,7 +43,7 @@ public class ReqrestTests {
                 .statusCode(200)
                 .body("data.id", is(2))
                 .body("data.name", is("fuchsia rose"))
-                .body("data.year", is("2001"))
+                .body("data.year", is(2001))
                 .body("data.color", is("#C74375"))
                 .body("pantone_value", is("17-2031"));
     }
